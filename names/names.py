@@ -22,6 +22,9 @@ f.close()
 # *list comprehension *1.8-2 secs
 duplicates = [name for name in names_1 if name in names_2]
 
+# duplicates = list(set(names_1) & set(names_2)) *0.7-1sec
+
+
 end_time = time.time()
 print(f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print(f"runtime: {end_time - start_time} seconds")
