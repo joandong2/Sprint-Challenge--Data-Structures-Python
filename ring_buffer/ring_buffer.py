@@ -9,7 +9,8 @@ class RingBuffer:
             self.ring.append(item)
         else:
             self.ring[self.oldest_node] = item
-            self.oldest_node += 1
+            #self.oldest_node += 1
+        self.oldest_node = (self.oldest_node + 1) % self.capacity
         # print(self.oldest_node)
         # 1 % 3 = 1 oldest = 0 + 1
         # 2 % 3 = 2 oldest = 1 + 1
